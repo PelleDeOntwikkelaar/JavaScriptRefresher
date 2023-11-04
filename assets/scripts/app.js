@@ -27,7 +27,7 @@ function greet(username, message = "Hello"){
 
 greet("Pelle", userMessage);
 
-const user = {
+const person = {
     name: 'Max',
     age:34,
     greetUser(){
@@ -35,12 +35,6 @@ const user = {
         console.log(this.age);
     }
 };
-
-
-
-console.log(user);
-console.log(user.name);
-console.log(user.age);
 
 class User{
     constructor(name, age){
@@ -57,8 +51,62 @@ console.log(user1)
 
 
 const hobbies = ["sports", "Cooking", "Reading"];
-console.log(hobbies[0])
-hobbies.findIndex((item) => {
-    return item === 'Sports';
-} )
+hobbies.push("Working");
+console.log(hobbies[0]);
+const sportsIndex = hobbies.findIndex((item) => item === 'Sports');
+
+console.log(sportsIndex);
+
+const edditedHobies = hobbies.map((item) => ({text: item}));
+console.log(edditedHobies);
+
+const userNameData = ["Max", "Reyniers"];
+
+const [firstName, lastName] = ["Max", "Reyniers"];
+console.log(firstName);
+console.log(lastName);
+
+const extendeHobbies = [...hobbies, ...userNameData]
+
+const user ={
+    title: '2',
+    ...person
+}
+
+// control structure
+const password = prompt('Your password');
+
+if(password === "Hello"){
+    console.log("hello works");
+} else if(password === "hello"){
+    console.log("hello works");
+}else {
+    console.log("Access not granted");
+}
+
+for(const hobby of hobbies){
+    console.log(hobby);
+}
+
+function handleTimeout(){
+    console.log("Timed Out");
+}
+
+const handleTimeout2 = () =>{
+    console.log('Timed out ...again');
+};
+
+setTimeout(handleTimeout2);
+
+function greeter(greeterFn){
+    greeterFn();
+}
+
+greeter(() => console.log("Hi"));
+
+
+
+
+
+
 
